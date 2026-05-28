@@ -8,23 +8,29 @@
 
 ## 📥 Latest Release
 
-### **v0.5.4 (Beta)** — May 24, 2026
+### **v0.5.8 (Beta)** — May 27, 2026
 
 **Platform:** macOS Apple Silicon (arm64)  
-**Build Quality:** Production-ready (signed & notarized by Apple)  
+**Build Quality:** Beta — not yet notarized (right-click → Open required on first launch)  
 **Release Type:** Beta / Early Access
 
 #### Download
-- **[Decoda-0.5.4-mac-arm64.dmg](https://github.com/visaoenhance/musicality-ai-releases/releases/download/v0.5.4/Decoda-0.5.4-mac-arm64.dmg)** (1.0 GB)
+- **[Decoda-0.5.8-mac-arm64.dmg](https://github.com/visaoenhance/musicality-ai-releases/releases/download/v0.5.8/Decoda-0.5.8-mac-arm64.dmg)** (1.0 GB)
+
+#### What's New in v0.5.8
+- 🔒 Security: blocked navigation hijacking (`will-navigate` lock) and popup spawning (`setWindowOpenHandler` deny)
+- 🔒 Security: PostHog URL parameter overrides blocked in production builds
+- ⚡ Performance: new database index on `analysis_jobs(source_asset_id)` — faster job polling
+- ⚡ Performance: skip blob join during job status polling (significant on large libraries)
+- ⚡ Performance: `ANALYZE` after schema migrations for accurate query planning
+- 🗄️ Database: schema version 9
 
 #### What's Included
-- ✅ Code signed with Developer ID Application: Visao, LLC
-- ✅ Notarized by Apple for secure installation
 - ✅ Auto-updates enabled (future updates install automatically)
 - ✅ Full packaged runtime verification passed
-- 🔶 Ongoing security validation (see release notes)
+- 🔶 Code signing & notarization in progress (coming in a future release)
 
-[**Release Notes**](https://github.com/visaoenhance/musicality-ai-releases/releases/tag/v0.5.4) · [**Full Validation Report**](https://github.com/visaoenhance/musicality-ai/blob/main/apps/desktop/docs/RELEASE_0.5.4_VALIDATION.md)
+[**Release Notes**](https://github.com/visaoenhance/musicality-ai-releases/releases/tag/v0.5.8)
 
 ---
 
@@ -50,7 +56,7 @@ Decoda is a desktop audio workstation that helps you:
 ## 💻 System Requirements
 
 ### Minimum
-- **OS:** macOS 11.0 (Big Sur) or later
+- **OS:** macOS 13.0 (Ventura) or later
 - **Processor:** Apple Silicon (M1/M2/M3/M4)
 - **Memory:** 8 GB RAM
 - **Storage:** 2 GB available space (+ space for your audio projects)
@@ -66,15 +72,15 @@ Decoda is a desktop audio workstation that helps you:
 1. **Download** the DMG file from the latest release above
 2. **Open** the DMG file
 3. **Drag** Decoda.app to your Applications folder
-4. **Launch** from Applications (double-click Decoda.app)
+4. **Launch** from Applications
 
 ### First Launch
-macOS may show a security dialog because Decoda is downloaded from the internet:
+Because Decoda is not yet notarized, macOS will block a standard double-click:
 1. Right-click on Decoda.app → **Open**
 2. Click **Open** in the security dialog
-3. Decoda will launch and remember your choice
+3. Decoda will launch and remember your choice for future launches
 
-**Note:** Decoda is fully notarized by Apple. The security dialog is standard for downloaded apps.
+> Code signing and Apple notarization are planned for an upcoming release.
 
 ---
 
@@ -98,7 +104,7 @@ You can disable auto-updates in **Preferences → General**.
 
 ### Beta Program
 This is an **early-access beta release**. We're actively working on:
-- Security validation refinements
+- Code signing & Apple notarization
 - Performance optimizations
 - Feature enhancements based on your feedback
 
@@ -113,12 +119,13 @@ This is an **early-access beta release**. We're actively working on:
 - ✅ **No cloud uploads** — Your music files never leave your computer
 - ✅ **Minimal telemetry** — Only anonymized app usage metrics (opt-out available)
 
-### Security Posture (v0.5.4)
-- ✅ Code signed & notarized by Apple
+### Security Posture (v0.5.8)
+- ✅ Navigation hijacking blocked (`will-navigate` lock)
+- ✅ Popup spawning blocked (`setWindowOpenHandler` deny)
+- ✅ PostHog URL parameter overrides blocked in production
 - ✅ All packaged runtime verification layers passed
-- 🔶 Telemetry egress MITM validation in progress
-
-See [RELEASE_0.5.4_VALIDATION.md](https://github.com/visaoenhance/musicality-ai/blob/main/apps/desktop/docs/RELEASE_0.5.4_VALIDATION.md) for complete security transparency.
+- 🔶 Code signing & Apple notarization: in progress
+- 🔶 Telemetry egress MITM validation: pending operator action
 
 ---
 
@@ -126,7 +133,9 @@ See [RELEASE_0.5.4_VALIDATION.md](https://github.com/visaoenhance/musicality-ai/
 
 | Version | Release Date | Platform | Status |
 |---------|-------------|----------|--------|
-| [v0.5.4](https://github.com/visaoenhance/musicality-ai-releases/releases/tag/v0.5.4) | May 24, 2026 | macOS arm64 | **Beta** (Latest) |
+| [v0.5.8](https://github.com/visaoenhance/musicality-ai-releases/releases/tag/v0.5.8) | May 27, 2026 | macOS arm64 | **Beta** (Latest) |
+| [v0.5.7](https://github.com/visaoenhance/musicality-ai-releases/releases/tag/v0.5.7) | May 25, 2026 | macOS arm64 | Beta |
+| [v0.5.4](https://github.com/visaoenhance/musicality-ai-releases/releases/tag/v0.5.4) | May 24, 2026 | macOS arm64 | Beta |
 
 ---
 
@@ -150,4 +159,4 @@ Built with:
 
 ---
 
-**Ready to dive into your music? [Download Decoda v0.5.4 →](https://github.com/visaoenhance/musicality-ai-releases/releases/download/v0.5.4/Decoda-0.5.4-mac-arm64.dmg)**
+**Ready to dive into your music? [Download Decoda v0.5.8 →](https://github.com/visaoenhance/musicality-ai-releases/releases/download/v0.5.8/Decoda-0.5.8-mac-arm64.dmg)**
